@@ -149,6 +149,19 @@
     <squarespace:script src="helpers.js" combo="false" />
     <squarespace:script src="authenticated.js" combo="false" />
 
+    <!-- Injected javascript to change copy in shop -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <script>
+      $(window).load(function() {
+        $('div.sold-out').html('');
+        $('div.sold-out').html('Coming Soon');
+    });
+    </script>
+
+    <!-- end of injected code --> 
+
     {squarespace-footers}
 
   </body>
