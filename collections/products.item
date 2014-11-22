@@ -3,7 +3,7 @@
         {.section items}
             {.section 0}
                 {.image?}
-                    <img {@|image-meta} data-load="false" />
+                    <img {@|image-meta} />
                 {.end}
                 {.video?}
                     {@|video}
@@ -12,7 +12,6 @@
         {.end}
     </div>
     <div id="flowContent">
-        <a href="{collection.fullUrl}" class="flow-back">{collection.title}</a>
 
         {@|product-status}{.if title}<h1 class="product-title">{title}</h1>{.end}
 
