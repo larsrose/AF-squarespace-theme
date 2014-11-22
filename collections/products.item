@@ -1,0 +1,74 @@
+{.section item}
+    <div id="flowThumbnail">
+        {.section items}
+            {.section 0}
+                {.image?}
+                    <img {@|image-meta} data-load="false" />
+                {.end}
+                {.video?}
+                    {@|video}
+                {.end}
+            {.end}
+        {.end}
+    </div>
+    <div id="flowContent">
+        <a href="{collection.fullUrl}" class="flow-back">{collection.title}</a>
+
+        {@|product-status}{.if title}<h1 class="product-title">{title}</h1>{.end}
+
+        {@|product-price}
+
+        <div class="product-excerpt">{.excerpt?}{excerpt}{.end}</div>
+
+        {.if body}<a href="#" id="flowBodyOpen"></a>{.end}
+
+        {@|product-checkout}
+    </div>
+    <div id="flowItems">
+        <div id="flowScrollPrompt"></div>
+        {.repeated section items}
+            <article class="flow-item"/>
+                {.image?}
+                    <img {@|image-meta} data-load="false" />
+                {.end}
+            </article>
+        {.end}
+    </div>
+    {.section body}
+        <div id="flowBody">
+            <a href="#" id="flowBodyClose"></a>
+            <div class="wrapper">
+                <h1>Additional Info</h1>
+                {@}
+            </div>
+        </div>
+    {.end}
+
+{.end}
+products.list
+<div id="productList" class="masonry-container">
+    {.repeated section items}
+        <article class="product {@|item-classes} masonry-item" id="thumb-{urlId}">
+            {@|product-status}
+            <a href="{fullUrl}" class="masonry-link"></a>
+            <figure class="masonry-thumbnail">
+                <div class="intrinsic content-fill">
+                    {.child-images?}
+                        <img {@|child-image-meta} data-load="viewport" />
+                    {.or}
+                        {.main-image?}
+                            <img {@|image-meta} data-load="viewport" />
+                        {.end}
+                    {.end}
+                </div>
+            </figure>
+            <div class="masonry-overlay">
+                <section class="masonry-content">
+                    {.section title}<h1 class="product-title masonry-title">{@}</h1>{.end}
+                    <div class="product-price-container">{@|product-price}</div>
+                    <div class="product-mark-inner">{@|product-status}</div>
+                </section>
+            </div>
+        </article>
+    {.end}
+</div>
