@@ -156,7 +156,7 @@
     <script>
       $(window).load(function() {
         $('div.sold-out').html('');
-        $('div.sold-out').html('Coming Soon');
+        $('div.sold-out').html('Made to Order');
     });
     </script>
 
