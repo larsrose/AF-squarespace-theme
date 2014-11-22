@@ -1,5 +1,5 @@
 {.section item}
-    <div id="flowThumbnail">
+    <div id="flowThumbnail" class="content-fill">
         {.section items}
             {.section 0}
                 {.image?}
